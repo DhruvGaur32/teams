@@ -1,0 +1,297 @@
+:root {
+    --count : 9
+}
+.teamTitle{
+ padding-left: 100px;
+ margin-left:50px;
+
+}
+
+body
+{
+    overflow-y: hidden;
+    background: #1d1d14 ;
+}
+
+.container
+{
+    margin-top: 100px;
+    margin-left: 45%;
+    position: relative;
+    width: 600px;
+    height:600px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+}
+.webTitle
+{
+    padding:0%;
+    margin:0%;
+    color:#fff;
+    size:500px;
+
+}
+
+.container .icon
+{
+    position: relative;
+    left:-55%;
+    width:100%;
+    height:90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 40px;
+    padding-right:10px ;
+}
+
+.container .icon .imgBx 
+{
+  position: absolute;
+  width: 80px;
+  height :80px;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 4px #222, 0 0 0 6px #fff;
+  transform: rotate(calc(360deg/var(--count)*var(--i)));
+  transform-origin: 340px;
+  z-index: 100;
+  overflow:hidden;
+}
+.container.icon.imgBx.active
+{
+    width: 400px;
+    box-shadow: 0 0 0 6px #222, 0 0 0 12px #ff1d50;
+}
+
+.container .icon .imgBx img
+{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: rotate(calc(-360deg/8*var(--i)));
+  transition:0.5s;
+  filter: grayscale(1);
+}
+
+.container .icon .imgBx.active img {
+    filter: grayscale(0);
+    transition: 0.5s ease;
+  }
+  
+
+.content{
+    width:600px;
+    height:600px;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+
+.content::before{
+   
+    content:'';
+    position: absolute;
+    inset:60px;
+    border: 4px solid transparent;
+    border-left: 4px solid #2196f3;
+    border-right: 4px solid #fff;
+    border-radius: 50%;
+    animation: animate_01 5s linear infinite;
+    z-index: none;
+    pointer-events: none;
+}
+@keyframes animate_01
+{
+    0%
+    {
+        rotate: 0deg;
+    }
+    100%
+    {
+        rotate:360deg;
+    }
+}
+
+
+.content::after{
+    content:'';
+    position: absolute;
+    inset:120px;
+    border: 4px solid transparent;
+    border-left: 4px solid #ff1d50;
+    border-right: 4px solid #fff;
+    border-radius: 50%;
+    animation: animate_01 2.5s linear infinite;
+    z-index: none;
+    pointer-events: none;
+}
+@keyframes animate_02
+{
+    0%
+    {
+        rotate: 360deg;
+    }
+    100%
+    {
+        rotate:0deg;
+    }
+}
+
+.contentBx
+{
+    position: absolute;
+    transform: scale(0);
+    transition: 0.5s;
+    opacity:0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.contentBx.active
+{
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.contentBx.card
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contentBx.card .imgBx
+{
+    position: relative;
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contentBx.card.textBx
+{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.contentBx .card .textBx h2
+{
+    position:relative;
+    font-size: 1.25em;
+    font-weight:600;
+    color:#fff;
+    line-height:1em;
+    text-transform:uppercase;
+    text-align: center;
+}
+
+.container .card .textBx h2 span{
+    font-size: 0.65rem;
+    color:#fff;
+    font-weight:500;
+    letter-spacing: 0.1em;
+}
+
+.contentBx.card.textBx.sci
+{
+    position:relative;
+    display: flex;
+    gap:7px;
+    margin-top: 10px;
+}
+.contentBx.card.textBx.sci li{
+    list-style: none;
+    display:flex;
+    color:#fff;
+    
+
+}
+
+.contentBx.card.textBx.sci li a
+{
+    position: relative;
+    width:30px;
+    height:30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:#444;
+    color:#fff;
+    text-decoration: none;
+    border-radius:5px;
+    transition:0.5s;
+}.contentBx.card.textBx.sci li a:hover
+{
+    background: #2196f3;
+}
+
+.main-div{
+    display: flex;
+}
+.active-role-button {
+    background-color: #ffffff;
+    transition: 0.5;
+    border-radius: 50px;
+    color: rgb(0, 0, 0); 
+    font-weight: bold; 
+    transition: background-color 0.3s ease;
+  }
+  
+  .active-role-button:hover {
+    background-color: #554949;
+  }
+
+  
+    
+    .image-container {
+      position: relative;
+    }
+    
+   
+      .contactsss .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* Adjust spacing between items */
+        margin-bottom: 20px; /* Adjust spacing between rows */
+      }
+      
+      .grid-item {
+       width: 100%;
+      }
+      
+      .mobile-content {
+        height: calc(100vh - 100px); /* Adjust the height as needed */
+        overflow: auto;
+      }
+      .photo-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Adjust spacing between photos */
+      }
+      
+      .photo-grid .team-member {
+        flex-basis: calc(33.33% - 20px); /* One-third of the available width with spacing */
+        max-width: calc(33.33% - 20px); /* One-third of the available width with spacing */
+        box-sizing: border-box;
+      }
+
+
